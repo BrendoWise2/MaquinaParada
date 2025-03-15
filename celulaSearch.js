@@ -48,11 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </td>
                     <div class="linha">
                         <p>Nome: ${celula.operatorName}</p>
-                        <p>Inicio: ${celula.starHour}</p>
-                        <p>Fim: ${celula.endHour}</p>
-                        <p>Data:${celula.endDate}</p>
-                        <p>Observacoes:${celula.endDate}</p>
-
+                        
                     </div>
                     
                 `;

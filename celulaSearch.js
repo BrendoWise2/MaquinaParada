@@ -47,8 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         <button><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
                     <div class="linha">
-                        <p>${celula.operatorName}</p>
-                        <p>${celula.endDate}</p>
+                        <p>Nome: ${celula.operatorName}</p>
+                        <p>Inicio: ${celula.starHour}</p>
+                        <p>Fim: ${celula.endHour}</p>
+                        <p>Data:${celula.endDate}</p>
+                        <p>Observacoes:${celula.endDate}</p>
+
                     </div>
                     
                 `;
@@ -126,7 +130,7 @@ bntExpandir.addEventListener('click', () => {
     console.log('Botão de expandir clicado');
     let linhas = document.querySelectorAll('.linha');
     linha.forEach((linha => {
-        linha.classList.add('linha-active')
+        linha.classList.toggle('linha-active')
         console.log('w');
     }));
 

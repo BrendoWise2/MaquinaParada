@@ -2,6 +2,7 @@ const search = document.getElementById('search-celula');
 const tabelaCelulas = document.getElementById('tabela-celulas');
 let totalTimeCell = document.getElementById('total-time');
 
+const linha = document.querySelectorAll('.linha');
 
 const bntDelete = document.getElementById('bnt-delete');
 const bntExpandir = document.getElementById('bnt-expandir');
@@ -45,7 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">
                         <button><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
-                    
+
+                    <div class="linha">Hoje</div>
+                
                     
                 `;
 

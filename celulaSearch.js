@@ -46,13 +46,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">
                         <button><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
-
-                    <div class="linha">Hoje</div>
-                
-                    
+ 
                 `;
 
+                    const extraRow = document.createElement("tr");
+                    extraRow.classList.add("linha", "hidden");
+                    extraRow.innerHTML = `
+                        <td colspan="5" class="extra-info">
+                            <p><strong>Nome:</strong> ${celula.operatorName}</p>
+                            <p><strong>Início:</strong> ${celula.startHour}</p>
+                            <p><strong>Fim:</strong> ${celula.endtHour}</p>
+                            <p><strong>Data Fim:</strong> ${celula.startHour}</p>
+                        </td>
+                    `;
+
                     tbody.append(row);
+                    tbody.append(extraRow);
+
 
                 });
                 console.log("Elemento totalTimeCell:", totalTimeCell);
@@ -121,20 +131,13 @@ function segundosParaTempo(totalSeconds) {
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-
-
 document.addEventListener("click", (event) => {
-    const botao = event.target.closest("td button");
+    const botao = event.target.closest(".expand-btn"); // Identifica o botão "+"
+
     if (botao) {
-        alert("opa");
-
-        // Pegando a linha correta que contém o botão clicado
-        const linha = botao.closest("tr").querySelector(".linha");
-
-        if (linha) {
-            linha.classList.add("active");
-        } else {
-            console.warn("Nenhuma div .linha encontrada dentro da linha da tabela.");
+        const linhaExtra = botao.closest("tr").nextElementSibling; // Encontra a linha extra da célula clicada
+        if (linhaExtra && linhaExtra.classList.contains("linha")) {
+            linhaExtra.classList.toggle("hidden"); // Expande ou colapsa a linha extra associada
         }
     }
 });

@@ -123,11 +123,17 @@ function segundosParaTempo(totalSeconds) {
 
 
 
+document.addEventListener("click", (event) => {
+    const botao = event.target.closest("td button");
+    if (botao) {
+        alert("opa");
+        linha.forEach((linha => (){
+            linha.classList.add('active');
+        }))
+    }
 
+});
 
-bntExpandir.addEventListener("click", () => {
-    alert("opa");
-})
 
 bntDelete.addEventListener('click', () => {
     if (confirm("Tem certeza que deseja deletar todos os registros?")) {

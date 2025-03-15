@@ -118,13 +118,14 @@ function segundosParaTempo(totalSeconds) {
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-bntExpandir.addEventListener('click', () => {
 
-    console.log('w');
 
+document.addEventListener("click", (event) => {
+    const botao = event.target.closest("td button");
+    if (botao) {
+        alert("Botão foi clicado!");
+    }
 });
-
-
 
 bntDelete.addEventListener('click', () => {
     if (confirm("Tem certeza que deseja deletar todos os registros?")) {

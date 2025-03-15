@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </td>
                     <div class="linha">
                         <p>Nome: ${celula.operatorName}</p>
-                        
+                        <p>${celula.endDate}</p>
                     </div>
                     
                 `;
@@ -126,7 +126,7 @@ bntExpandir.addEventListener('click', () => {
     console.log('Botão de expandir clicado');
     let linhas = document.querySelectorAll('.linha');
     linha.forEach((linha => {
-        linha.classList.toggle('linha-active')
+        linha.classList.add('linha-active')
         console.log('w');
     }));
 

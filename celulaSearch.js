@@ -2,10 +2,7 @@ const search = document.getElementById('search-celula');
 const tabelaCelulas = document.getElementById('tabela-celulas');
 let totalTimeCell = document.getElementById('total-time');
 
-let linha = document.querySelectorAll('.linha');
-
 const bntDelete = document.getElementById('bnt-delete');
-const bntExpandir = document.getElementById('bnt-expandir');
 
 document.addEventListener('DOMContentLoaded', function () {
     fetch("https://deploy-youtube-render.onrender.com/celula/mostrar", {
@@ -120,16 +117,6 @@ function segundosParaTempo(totalSeconds) {
     const seconds = totalSeconds % 60;
     return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
-
-bntExpandir.addEventListener('click', () => {
-    console.log('Botão de expandir clicado');
-    let linhas = document.querySelectorAll('.linha');
-    linha.forEach((linha => {
-        linha.classList.add('linha-active')
-        console.log('w');
-    }));
-
-});
 
 
 bntDelete.addEventListener('click', () => {

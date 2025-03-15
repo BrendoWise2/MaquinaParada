@@ -124,6 +124,12 @@ bntExpandir.addEventListener('click', () => {
 
 });
 
+document.addEventListener('click', (event) => {
+    if (event.target.closest('button')) {
+        console.log('Botão dentro da tabela foi clicado!');
+    }
+});
+
 
 bntDelete.addEventListener('click', () => {
     if (confirm("Tem certeza que deseja deletar todos os registros?")) {

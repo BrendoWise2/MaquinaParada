@@ -127,11 +127,16 @@ document.addEventListener("click", (event) => {
     const botao = event.target.closest("td button");
     if (botao) {
         alert("opa");
-        linha.forEach((linha => (){
-            linha.classList.add('active');
-        }))
-    }
 
+        // Pegando a linha correta que contém o botão clicado
+        const linha = botao.closest("tr").querySelector(".linha");
+
+        if (linha) {
+            linha.classList.add("active");
+        } else {
+            console.warn("Nenhuma div .linha encontrada dentro da linha da tabela.");
+        }
+    }
 });
 
 

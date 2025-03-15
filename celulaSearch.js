@@ -126,6 +126,7 @@ bntExpandir.addEventListener('click', () => {
     console.log('Botão de expandir clicado');
     let linhas = document.querySelectorAll('.linha');
     linha.forEach((linha => {
+        linha.classList.remove('.linha')
         linha.classList.add('.active')
         console.log('w');
     }));

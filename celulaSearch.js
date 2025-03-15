@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <button><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
                     <div class="linha">
-                        <p>Nome: ${celula.operatorName}</p>
+                        <p>${celula.operatorName}</p>
                         <p>${celula.endDate}</p>
                     </div>
                     

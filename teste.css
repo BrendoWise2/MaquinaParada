@@ -180,20 +180,13 @@ td:last-child button:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.expandido {
-    display: table-row;
-}
-
 .linha {
     display: none;
-    transition: all 0.3s ease;
 }
 
-.linha-active {
+.active {
     display: inline-block;
 }
-
-
 
 @media only screen and (max-width: 768px) {
     .figure__image {

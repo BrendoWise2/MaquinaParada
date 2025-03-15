@@ -123,8 +123,11 @@ function segundosParaTempo(totalSeconds) {
 }
 
 bntExpandir.addEventListener('click', () => {
-    console.log('Botão de expandir clicado');
 
+    let linhas = document.querySelectorAll('.linha');
+    linha.forEach((linha => {
+        console.log('Botão de expandir clicado');
+    }));
 
 });
 

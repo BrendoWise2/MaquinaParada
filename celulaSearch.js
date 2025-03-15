@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </td>
                     <div class="linha">
                         <p>Nome: ${celula.operatorName}</p>
+                        <p>${celula.endDate}</p>
                     </div>
                     
                 `;

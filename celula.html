@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celula</title>
+    <link rel="stylesheet" href="styleCelula.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1 class="main__title">Equipamentos</h1>
+
+        <section class="main__products">
+            <table class="products__table">
+                <thead>
+                    <tr class="products-table__header">
+                        <th class="products-header__cell">Imagem</th>
+                        <th class="products-header__cell">Equipamento</th>
+                        <th class="products-header__cell">Parada Total</th>
+                        <th class="products-header__cell">Data</th>
+                        <th class="products-header__cell">Expandir</th>
+                        <div class="search"><label>Procurar: </label><input id="search-celula" type="text"></div>
+                    </tr>
+                </thead>
+                <tbody id="tabela-celulas">
+                    <tr class="products-table__row">
+                        <td class="products-table__cell">
+                            <figure class="products-table__figure center">
+                                <img class="figure__image"
+                                    src=" https://www.jf.ind.br/imagens/informacoes/usinagem-torno-cnc-01.webp"
+                                    alt="Celula">
+                            </figure>
+                        </td>
+                        <td class="products-header__cell">Celula 13</td>
+                        <td class="products-header__cell">20:35:10</td>
+                        <td class="products-header__cell">01/03/2025</td>
+                        <td class="products-header__cell"><button><i class="fa-solid fa-circle-plus"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="times">
+            <div class="time-div">
+                <p>Tempo Total de Parada: </p>
+                <p id="total-time">02:00:00</p>
+            </div>
+
+            <div class="deletar-registros">
+                <button id="bnt-delete">Deletar Registros</button>
+            </div>
+        </div>
+    </main>
+    <script src="celulaSearch.js"></script>
+</body>

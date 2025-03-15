@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-primary: #2263f4;
+    --color-primary-dark: #1a4dd1;
+    --color-bg: #f4f6f9;
+    --color-text: #333;
+    --color-white: #fff;
+    --color-table-header: var(--color-primary);
+    --color-table-header-font: #fff;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 20px;
+}
+
+.main__title {
+    background-color: var(--color-primary);
+    color: var(--color-table-header-font);
+    font-size: 20pt;
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search label {
+    font-size: 14pt;
+    color: var(--color-primary-dark);
+    font-weight: bold;
+}
+
+.search input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14pt;
+    outline: none;
+    transition: 0.3s;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(34, 99, 244, 0.3);
+}
+
+.main__products {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+    padding-bottom: 80px;
+    /* <- ADICIONADO: espaço extra para o times */
+}
+
+
+.products__table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.products-table__header {
+    background-color: var(--color-table-header);
+    color: var(--color-table-header-font);
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.products-header__cell,
+.products-table__cell {
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 13pt;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.products-table__row:hover {
+    background-color: #f0f4ff;
+    transition: background-color 0.3s ease;
+}
+
+.figure__image {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16pt;
+    transition: 0.3s ease;
+}
+
+td:last-child button {
+    color: var(--color-primary);
+}
+
+td:last-child button:hover {
+    color: #fff;
+    background-color: var(--color-primary-dark);
+    border-radius: 8px;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+.times {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    font-size: 16pt;
+    padding: 25px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.time-div {
+    margin-right: 430px;
+}
+
+.times p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.deletar-registros button {
+    background-color: var(--color-table-header-font);
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+
+}
+
+.deletar-registros button:hover {
+    background-color: #F0E68C;
+    transition: background-color 0.3s ease;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .figure__image {
+        width: 80px;
+    }
+
+    .products-header__cell,
+    .products-table__cell {
+        font-size: 11pt;
+        padding: 12px 10px;
+    }
+
+    .search input {
+        width: 100%;
+        max-width: 300px;
+    }
+}

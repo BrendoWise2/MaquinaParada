@@ -46,10 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">
                         <button><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
-                    <div class="linha">
-                        <p>${celula.operatorName}</p>
-                        <p>${celula.endDate}</p>
-                    </div>
+                    
                     
                 `;
 

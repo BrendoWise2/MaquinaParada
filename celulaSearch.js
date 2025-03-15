@@ -120,10 +120,7 @@ function segundosParaTempo(totalSeconds) {
 
 bntExpandir.addEventListener('click', () => {
 
-    forEach((item => {
-        console.log('w');
-    }))
-
+    console.log('w');
 
 });
 

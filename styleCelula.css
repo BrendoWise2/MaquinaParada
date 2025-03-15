@@ -189,7 +189,7 @@ td:last-child button:hover {
     transition: all 0.3s ease;
 }
 
-.linha-active {
+.active {
     display: inline-block;
 }
 

@@ -2,7 +2,6 @@ const search = document.getElementById('search-celula');
 const tabelaCelulas = document.getElementById('tabela-celulas');
 let totalTimeCell = document.getElementById('total-time');
 
-let linha = document.querySelectorAll('.linha');
 
 const bntDelete = document.getElementById('bnt-delete');
 const bntExpandir = document.getElementById('bnt-expandir');
@@ -120,12 +119,7 @@ function segundosParaTempo(totalSeconds) {
 }
 
 bntExpandir.addEventListener('click', () => {
-    console.log('Botão de expandir clicado');
-    let linhas = document.querySelectorAll('.linha');
-    linha.forEach((linha => {
-        linha.classList.add('.active')
-        console.log('w');
-    }));
+    console.log('w');
 
 });
 

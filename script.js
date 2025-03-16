@@ -26,6 +26,7 @@ btnSalvar.addEventListener('click', function () {
     if (confirm("Voce realmente deseja salvar!")) {
         salvarEquipamento();
         btnSalvar.disabled = true;
+        alert(`Tempo de parada foi salvo por ${operatorName} || "Usuario desconhecido"`);
     }
 
 

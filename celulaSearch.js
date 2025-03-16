@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <td colspan="5" class="extra-info">
                             <p><strong>Nome:</strong> ${celula.operatorName}</p>
                             <p><strong>Início:</strong> ${celula.startHour}</p>
-                            <p><strong>Fim:</strong> ${celula.endtHour}</p>
-                            <p><strong>Data Fim:</strong> ${celula.startHour}</p>
+                            <p><strong>Fim:</strong> ${celula.endHour}</p>
+                            <p><strong>Data Fim:</strong> ${celula.endDate}</p>
                         </td>
                     `;
 

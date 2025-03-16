@@ -185,7 +185,7 @@ td:last-child button:hover {
 }
 
 .hidden {
-    display: none;
+    display: table-row;
     transition: all 0.3s ease;
 }
 

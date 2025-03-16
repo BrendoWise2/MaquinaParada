@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <p><strong>Início:</strong> ${celula.startHour}</p>
                             <p><strong>Fim:</strong> ${celula.endHour}</p>
                             <p><strong>Data Fim:</strong> ${celula.endDate}</p>
-                            <pre class="observacao"><strong>Obs:</strong> ${celula.obs}</pre>
+                            <div class="obs-text"><pre class="observacao"><strong>Obs:</strong> ${celula.obs}</pre></div>
                         </td>
                     `;
 

@@ -199,11 +199,11 @@ td:last-child button:hover {
 }
 
 .extra-info {
-    display: flex;
     width: 100%;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
+    word-wrap: break-word;
 }
 
 .extra-info p {
@@ -211,18 +211,32 @@ td:last-child button:hover {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap;
-    /* respeita quebras de linha e quebra palavras */
+}
+
+.obs-text {
+    width: 100%;
+    display: block;
+    /* Remover o flex-box se não precisar de alinhamento específico */
+    max-width: 100%;
+    /* Garante que o texto não ultrapasse o limite da célula */
 }
 
 .observacao {
+    width: 100%;
+    margin-top: 20px;
     white-space: pre-wrap;
-    /* Para preservar quebras de linha */
+    /* Respeita as quebras de linha */
+    word-wrap: break-word;
+    /* Quebra palavras longas que ultrapassam a largura */
+    overflow-wrap: break-word;
+    /* Mais garantia de quebra de palavras */
     background-color: #f5f5f5;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: Arial, sans-serif;
     font-size: 14pt;
+    word-break: break-word;
 }
 
 

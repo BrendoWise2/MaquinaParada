@@ -132,14 +132,19 @@ function segundosParaTempo(totalSeconds) {
 }
 
 document.addEventListener("click", (event) => {
-    const botao = event.target.closest(".expand-btn"); // Identifica o botão "+"
+    const botao = event.target.closest(".expand-btn"); // Identifica o botão
 
     if (botao) {
-        const linhaExtra = botao.closest("tr").nextElementSibling; // Encontra a linha extra da célula clicada
+        let linhaAtual = botao.closest("tr"); // Linha do botão clicado
+        let linhaExtra = linhaAtual.nextElementSibling; // Próxima linha
+
+        // Se houver um espaço vazio (nó de texto), vá para a próxima linha real
+        while (linhaExtra && linhaExtra.nodeType === 3) {
+            linhaExtra = linhaExtra.nextElementSibling;
+        }
+
         if (linhaExtra && linhaExtra.classList.contains("linha")) {
-            linhaExtra.classList.toggle("hidden");
-            // Expande ou colapsa a linha extra associada
-            alert('Botao clicado!');
+            linhaExtra.classList.toggle("active");
         }
     }
 });

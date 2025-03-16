@@ -190,12 +190,12 @@ td:last-child button:hover {
 }
 
 .linha {
-    display: inline-block;
+    display: none;
     transition: all 0.3s ease;
 }
 
-.active {
-    display: inline-block;
+.linha.active {
+    display: table-row;
 }
 
 

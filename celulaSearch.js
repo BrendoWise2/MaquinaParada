@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">${celula.totalTime}</td>
                     <td class="products-header__cell">${celula.startDate}</td>
                     <td class="products-header__cell">
-                        <button><i class="fa-solid fa-circle-plus"></i></button>
+                        <button class="expand-btn"><i class="fa-solid fa-circle-plus"></i></button>
                     </td>
  
                 `;

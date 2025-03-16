@@ -53,7 +53,7 @@ function salvarEquipamento() {
             totalTime: totalTime,
             startDate: startDate,
             endDate: endDate,
-            obs: obs;
+            obs: obs
 
         })
 

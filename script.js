@@ -3,6 +3,7 @@ let btnSalvar = document.querySelector('#salvarButton');
 let celulaSelecionada, operatorName;
 let startHour, endHour, totalTime;
 let startDate, endDate, ge;
+let obs;
 
 
 btnSalvar.addEventListener('click', function () {
@@ -14,9 +15,10 @@ btnSalvar.addEventListener('click', function () {
     startDate = document.getElementById('startDate').value.trim();
     endDate = document.getElementById('endDate').value.trim();
     totalTime = document.getElementById('totalTime').value.trim();
+    obs = document.getElementById('obs').value.trim();
 
     // Agora sim: valida
-    if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime) {
+    if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime || !obs) {
         alert("Preencha todos os campos!");
         return;
     }
@@ -51,6 +53,7 @@ function salvarEquipamento() {
             totalTime: totalTime,
             startDate: startDate,
             endDate: endDate,
+            obs: obs;
 
         })
 

@@ -198,6 +198,16 @@ td:last-child button:hover {
     display: table-row;
 }
 
+.extra-info {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.extra-info p {}
+
 
 
 @media only screen and (max-width: 768px) {

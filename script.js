@@ -26,7 +26,6 @@ btnSalvar.addEventListener('click', function () {
     if (confirm("Voce realmente deseja salvar!")) {
         salvarEquipamento();
         btnSalvar.disabled = true;
-        setInterval(disabledBnt, 4000);
     }
 
 

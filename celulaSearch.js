@@ -137,7 +137,9 @@ document.addEventListener("click", (event) => {
     if (botao) {
         const linhaExtra = botao.closest("tr").nextElementSibling; // Encontra a linha extra da célula clicada
         if (linhaExtra && linhaExtra.classList.contains("linha")) {
-            linhaExtra.classList.toggle("hidden"); // Expande ou colapsa a linha extra associada
+            linhaExtra.classList.toggle("hidden");
+            // Expande ou colapsa a linha extra associada
+            alert('Botao clicado!');
         }
     }
 });

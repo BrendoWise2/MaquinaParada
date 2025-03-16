@@ -99,6 +99,14 @@ main button:hover,
     margin-top: 30px;
 }
 
+#startButton .disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    border: 1px solid #aaa;
+    opacity: 0.7;
+}
+
 .stop-register {
     margin-top: 40px;
     display: flex;

@@ -156,6 +156,17 @@ td:last-child button:hover {
     font-weight: bold;
 }
 
+
+.developer {
+    position: relative;
+    right: 400px;
+    font-family: "Great Vibes", cursive !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24pt;
+
+}
+
 .deletar-registros button {
     background-color: var(--color-table-header-font);
     border-radius: 15px;
@@ -211,7 +222,10 @@ td:last-child button:hover {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap;
+    font-style: italic;
 }
+
+.extra-info strong {}
 
 .obs-text {
     width: 100%;

@@ -99,7 +99,7 @@ main button:hover,
     margin-top: 30px;
 }
 
-#startButton .disabled {
+.disabled {
     background-color: #ccc;
     color: #666;
     cursor: not-allowed;

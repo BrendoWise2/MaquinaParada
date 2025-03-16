@@ -18,7 +18,7 @@ btnSalvar.addEventListener('click', function () {
     obs = document.getElementById('obs').value.trim();
 
     // Agora sim: valida
-    if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime || !obs) {
+    if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime) {
         alert("Preencha todos os campos!");
         return;
     }

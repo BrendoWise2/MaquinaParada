@@ -206,7 +206,13 @@ td:last-child button:hover {
     align-items: center;
 }
 
-.extra-info p {}
+.extra-info p {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    /* respeita quebras de linha e quebra palavras */
+}
 
 
 

@@ -174,3 +174,7 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
+setInterval(() => {
+    location.reload();
+}, 60000);
+

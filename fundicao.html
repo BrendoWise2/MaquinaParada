@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Parada de Máquina</title>
+    <link rel="stylesheet" href="fundicaoStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Parada de Máquina</h1>
+    </header>
+
+    <main>
+        <div class="infos">
+            <label>Nome:
+                <input type="text" id="operator" placeholder="9999 - Seu Nome">
+            </label>
+
+            <label for="celulas">Equipamento:</label>
+            <select id="celulas">
+                <option value="FornoFusao">Forno Fusao</option>
+                <option value="FornoSecagem">Forno Secagem</option>
+                <option value="Injetora">Injetora</option>
+                <option value="Talha">Talha</option>
+                <option value="TransportadorInterno">Transportador Interno</option>
+                <option value="TransportadorExterno">Transportador Externo</option>
+                <option value="Ttc">TTC</option>
+                <option value="Ttb">TTB</option>
+                <option value="Prensa">Prensa</option>
+                <option value="Rx">RX</option>
+            </select>
+            <select id="complemento-equipamento">
+                <option value="ttc">TTC</option>
+            </select>
+
+
+            <section class="stop-register">
+                <div>
+                    <h4>Início da Parada:</h4>
+                    <input type="time" id="startHour">
+                    <input type="date" id="startDate">
+                </div>
+                <div>
+                    <h4>Fim da Parada:</h4>
+                    <input type="time" id="endHour">
+                    <input type="date" id="endDate">
+                </div>
+                <div>
+                    <h4>Tempo Total:</h4>
+                    <input type="time" id="totalTime">
+                </div>
+
+                <div>
+                    <textarea id="obs" name="obs" maxlength="255" placeholder="Observacao:"></textarea>
+                </div>
+
+                <button id="salvarButton">Salvar</button>
+            </section>
+    </main>
+
+    <script src="fundicao.js"></script>
+</body>
+
+</html>

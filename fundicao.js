@@ -24,6 +24,7 @@ btnSalvar.addEventListener('click', function () {
     operatorName = document.getElementById('operator').value.trim();
     celulaSelecionada = document.getElementById('celulas').value.trim();
     complementoEquipamento = document.getElementById('complemento-equipamento').value.trim();
+    console.log(complementoEquipamento);
     startHour = document.getElementById('startHour').value.trim();
     endHour = document.getElementById('endHour').value.trim();
     startDate = document.getElementById('startDate').value.trim();

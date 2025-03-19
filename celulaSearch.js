@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <img class="figure__image" src="https://www.jf.ind.br/imagens/informacoes/usinagem-torno-cnc-01.webp" alt="Celula">
                         </figure>
                     </td>
-                    <td class="products-header__cell">${celula.celulaSelecionada}</td>
+                    <td class="products-header__cell">`${ celula.celulaSelecionada } ${ celula.complementoEquipamento } `</td>
                     <td class="products-header__cell">${celula.totalTime}</td>
                     <td class="products-header__cell">${celula.startDate}</td>
                     <td class="products-header__cell">

@@ -43,8 +43,7 @@ btnSalvar.addEventListener('click', function () {
         btnSalvar.disabled = true;
         btnSalvar.classList.add('disabled');
         alert(`Tempo de parada foi salvo por ${operatorName || "Usuario desconhecido"}`);
-
-        complementoEquipamento = complementoEquipamento || "";
+        complementoEquipamento = "Especificacoes" || "";
 
     }
 

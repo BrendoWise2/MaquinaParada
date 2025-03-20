@@ -5,6 +5,7 @@ let totalTimeCell = document.getElementById('total-time');
 const linha = document.querySelectorAll('.linha');
 
 const bntDelete = document.getElementById('bnt-delete');
+const bntDeleteByID = document.getElementById('delete-btn');
 const bntExpandir = document.getElementById('bnt-expandir');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -149,6 +150,30 @@ document.addEventListener("click", (event) => {
         if (linhaExtra && linhaExtra.classList.contains("linha")) {
             linhaExtra.classList.toggle("active");
         }
+    }
+});
+
+bntDeleteByID.addEventListener('click', () => {
+    if (confirm("Deletar o registro ?")) {
+        fetch(`https://deploy-youtube-render.onrender.com/celula/${celula.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Registro deletado com sucesso!");
+                } else {
+                    alert("Erro ao deletar registro!");
+                }
+
+            })
+
+            .catch(error => {
+                console.error("Erro ao tentar deletar registro:", error);
+                alert("Ocorreu um erro ao tentar deletar o registro.");
+            })
     }
 });
 

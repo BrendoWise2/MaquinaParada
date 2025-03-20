@@ -116,6 +116,10 @@ button {
     transition: 0.3s ease;
 }
 
+.products-header__cell button {
+    margin-right: 35px;
+}
+
 td:last-child button {
     color: var(--color-primary);
 }

@@ -162,6 +162,8 @@ document.addEventListener('click', (event) => {
         if (confirm("Deseja deletar o registro da célula ?")) {
             const id = row.getAttribute("data-id");
 
+            console.log("Celula:", celula);
+
             fetch(`https://deploy-youtube-render.onrender.com/celula/${id}`, {
                 method: "DELETE",
                 headers: {

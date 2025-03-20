@@ -156,36 +156,36 @@ document.addEventListener("click", (event) => {
 document.addEventListener('click', (event) => {
     const deleteBtn = event.target.closest(".delete-btn");
     if (deleteBtn) {
-        const row = deleteBtn.closest("tr");
-        const celulaNome = row.querySelectorAll("td")[1].textContent;
+        const row = deleteBtn.closest("tr");  // Encontra a linha associada ao botão
+        const id = row.getAttribute("data-id");  // Obtém o ID da linha (data-id)
 
-        if (confirm("Deseja deletar o registro da célula ?")) {
-            const id = row.getAttribute("data-id");
-
-            fetch(`https://deploy-youtube-render.onrender.com/celula/${id}`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert("Registro deletado com sucesso!");
-                    } else {
-                        alert("Erro ao deletar registro!");
-                    }
-
-                })
-
-                .catch(error => {
-                    console.error("Erro ao tentar deletar registro:", error);
-                    alert("Ocorreu um erro ao tentar deletar o registro.");
-                })
+        if (!id) {
+            alert("ID inválido. Não foi possível deletar o registro.");
+            return;
         }
 
-
+        // Fazendo a requisição DELETE para o servidor
+        fetch(`https://deploy-youtube-render.onrender.com/celula/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Registro deletado com sucesso!");
+                    row.remove();  // Remove a linha da tabela após a deleção bem-sucedida
+                } else {
+                    alert("Erro ao deletar registro!");
+                }
+            })
+            .catch(error => {
+                console.error("Erro ao tentar deletar registro:", error);
+                alert("Ocorreu um erro ao tentar deletar o registro.");
+            });
     }
 });
+
 
 
 bntDelete.addEventListener('click', () => {

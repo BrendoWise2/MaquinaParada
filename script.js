@@ -17,9 +17,6 @@ btnSalvar.addEventListener('click', function () {
     totalTime = document.getElementById('totalTime').value.trim();
     obs = document.getElementById('obs').value.trim();
 
-    if (complementoEquipamento == "Especificacoes" || "") {
-        complementoEquipamento = "";
-    }
 
     // Agora sim: valida
     if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime) {

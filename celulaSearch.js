@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">${celula.startDate}</td>
                     <td class="products-header__cell"><button class="expand-btn"><i
                                     class="fa-solid fa-circle-plus"></i></button>
-                            <button class="delete-btn"><i class="fa-regular fa-trash-can"
+                            <button class="delete-btn" data-id="${celula.id}"><i class="fa-regular fa-trash-can"
                                     style="color: #ff0000;"></i></button>
                         </td>
  
@@ -157,8 +157,8 @@ document.addEventListener('click', (event) => {
     const deleteBtn = event.target.closest(".delete-btn");
     if (deleteBtn) {
         const row = deleteBtn.closest("tr");  // Encontra a linha associada ao botão
-        const id = row.getAttribute("data-id");  // Obtém o ID da linha (data-id)
-
+        //  const id = row.getAttribute("data-id");  // Obtém o ID da linha (data-id)
+        const id = deleteBtn.dataset.id;
         if (!id) {
             alert("ID inválido. Não foi possível deletar o registro.");
             return;

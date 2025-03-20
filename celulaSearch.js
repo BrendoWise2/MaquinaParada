@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td class="products-header__cell">${celula.startDate}</td>
                     <td class="products-header__cell"><button class="expand-btn"><i
                                     class="fa-solid fa-circle-plus"></i></button>
-                            <button class="expand-btn"><i class="fa-regular fa-trash-can"
+                            <button class="delete-btn"><i class="fa-regular fa-trash-can"
                                     style="color: #ff0000;"></i></button>
                         </td>
  

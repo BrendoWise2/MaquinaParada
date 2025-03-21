@@ -9,40 +9,6 @@ const bntDeleteByID = document.querySelectorAll('.delete-btn');
 const bntExpandir = document.getElementById('bnt-expandir');
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
-    let sortDirection = 'asc';
-
-    const tabelaCelulas = document.getElementById('tabela-celula');
-    const headerTotalTime = document.getElementById('.products-header__cell:nth-child(3)');
-
-    headerTotalTime.addEventListener('click', function () {
-        const body = document.querySelector('.products__table tbody');
-        let rows = Array.from(tbody.querySelectorAll('tr'));
-
-        rows.sort((a, b) => {
-            const timeA = a.querySelector('.products-header__cell:nth-child(3)').textContent;
-            const timeB = b.querySelector('.products-header__cell:nth-child(3)').textContent;
-
-            const secondsA = totalEmSegundos(timeA);
-            const secondsB = totalEmSegundos(timeB);
-
-            if (sortDirection === 'asc') {
-                return secondsA - secondsB; // Ordenação crescente
-            } else {
-                return secondsB - secondsA; // Ordenação decrescente
-            }
-        });
-
-        // Alterna a direção da ordenação
-        sortDirection = (sortDirection === 'asc') ? 'desc' : 'asc';
-
-        // Reanexa as linhas ordenadas na tabela
-        rows.forEach(row => tbody.appendChild(row));
-
-    });
-
-
     fetch("https://deploy-youtube-render.onrender.com/celula/mostrar", {
         method: "GET",
         headers: {
@@ -153,6 +119,39 @@ search.addEventListener('keyup', () => {
     totalTimeCell.textContent = segundosParaTempo(totalSegundos);
 });
 
+
+document.addEventListener('click', function () {
+    let sortDirection = 'asc';
+
+    const tabelaCelulas = document.getElementById('tabela-celula');
+    const headerTotalTime = document.getElementById('.products-header__cell:nth-child(3)');
+
+    headerTotalTime.addEventListener('click', function () {
+        const body = document.querySelector('.products__table tbody');
+        let rows = Array.from(tbody.querySelectorAll('tr'));
+
+        rows.sort((a, b) => {
+            const timeA = a.querySelector('.products-header__cell:nth-child(3)').textContent;
+            const timeB = b.querySelector('.products-header__cell:nth-child(3)').textContent;
+
+            const secondsA = totalEmSegundos(timeA);
+            const secondsB = totalEmSegundos(timeB);
+
+            if (sortDirection === 'asc') {
+                return secondsA - secondsB; // Ordenação crescente
+            } else {
+                return secondsB - secondsA; // Ordenação decrescente
+            }
+        });
+
+        // Alterna a direção da ordenação
+        sortDirection = (sortDirection === 'asc') ? 'desc' : 'asc';
+
+        // Reanexa as linhas ordenadas na tabela
+        rows.forEach(row => tbody.appendChild(row));
+
+    });
+});
 
 
 //converte tempo "hh:mm:ss" em segundos

@@ -2,7 +2,7 @@ let machineId = null; // Variável para armazenar o ID da parada
 let btnSalvar = document.querySelector('#salvarButton');
 let celulaSelecionada, operatorName;
 let startHour, endHour, totalTime;
-let startDate, endDate, ge;
+let startDate, endDate, ge, dhors;
 let obs;
 
 
@@ -72,6 +72,38 @@ function salvarEquipamento() {
         });
 
 }
+
+function calcularTempoParada() {
+    const startHourInput = document.getElementById('startHour').value.trim();
+    const endHourInput = document.getElementById('endHour').value.trim();
+    const startDateInput = document.getElementById('startDate').value.trim();
+    const endDateInput = document.getElementById('endDate').value.trim();
+
+    if (startHourInput && endHourInput && startDateInput && endDateInput) {
+        const inicio = new Date(`${startDateInput}T${startHourInput}`);
+        const fim = new Date(`${endDateInput}T${endHourInput}`);
+
+        const diffMs = fim - inicio;
+        if (diffMs >= 0) {
+            const diffHoras = diffMs / (1000 * 60 * 60);
+            const horasInteiras = Math.floor(diffHoras);
+            const minutos = Math.round((diffHoras - horasInteiras) * 60);
+
+            const horasFormatadas = String(horasInteiras).padStart(2, '0');
+            const minutosFormatados = String(minutos).padStart(2, '0');
+
+            document.querySelector('#totalTime').value = `${horasFormatadas}:${minutosFormatados}`;
+        } else {
+            document.querySelector('#totalTime').value = '';
+        }
+    }
+}
+
+document.getElementById('startHour').addEventListener('input', calcularTempoParada);
+document.getElementById('endHour').addEventListener('input', calcularTempoParada);
+document.getElementById('startDate').addEventListener('input', calcularTempoParada);
+document.getElementById('endDate').addEventListener('input', calcularTempoParada);
+
 
 
 

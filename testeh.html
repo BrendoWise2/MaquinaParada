@@ -1,23 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<label>Data Início:</label>
+<input type="date" id="dataInicio"><br>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celula</title>
-    <link rel="stylesheet" href="styleCelula.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-</head>
+<label>Hora Início:</label>
+<input type="time" id="horaInicio"><br>
 
-<body>
-    <main>
-        <h1 class="main__title">Equipamentos</h1>
+<label>Data Fim:</label>
+<input type="date" id="dataFim"><br>
 
-        <p id="total-time-cell">horas</p>
-    </main>
-    <script src="teste.js"></script>
-</body>
+<label>Hora Fim:</label>
+<input type="time" id="horaFim"><br><br>
+
+<button onclick="calcularHoras()">Calcular Total de Horas Paradas</button>
+
+<p id="resultado"></p>
+
+<script>
+    function calcularHoras() {
+        const dataInicio = document.getElementById("dataInicio").value;
+        const horaInicio = document.getElementById("horaInicio").value;
+        const dataFim = document.getElementById("dataFim").value;
+        const horaFim = document.getElementById("horaFim").value;
+
+        if (!dataInicio || !horaInicio || !dataFim || !horaFim) {
+            document.getElementById("resultado").innerText = "Preencha todos os campos.";
+            return;
+        }
+
+        // Junta data e hora no formato ISO
+        const inicio = new Date(`${dataInicio}T${horaInicio}`);
+        const fim = new Date(`${dataFim}T${horaFim}`);
+
+        if (fim < inicio) {
+            document.getElementById("resultado").innerText = "A data/hora final não pode ser menor que a inicial.";
+            return;
+        }
+
+        // Calcula a diferença em milissegundos
+        const diffMs = fim - inicio;
+
+        // Converte para horas
+        const diffHoras = diffMs / (1000 * 60 * 60);
+        const horasInteiras = Math.floor(diffHoras);
+        const minutos = Math.round((diffHoras - horasInteiras) * 60);
+
+        document.getElementById("resultado").innerText =
+            `Total parado: ${horasInteiras}h ${minutos}min`;
+    }
+</script>

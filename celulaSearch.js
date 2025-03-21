@@ -164,25 +164,27 @@ document.addEventListener('click', (event) => {
             return;
         }
 
-        // Fazendo a requisição DELETE para o servidor
-        fetch(`https://deploy-youtube-render.onrender.com/celula/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert("Registro deletado com sucesso!");
-                    row.remove();  // Remove a linha da tabela após a deleção bem-sucedida
-                } else {
-                    alert("Erro ao deletar registro!");
+        if (confirm("Excluir Registro?")) {
+            // Fazendo a requisição DELETE para o servidor
+            fetch(`https://deploy-youtube-render.onrender.com/celula/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
                 }
             })
-            .catch(error => {
-                console.error("Erro ao tentar deletar registro:", error);
-                alert("Ocorreu um erro ao tentar deletar o registro.");
-            });
+                .then(response => {
+                    if (response.ok) {
+                        alert("Registro deletado com sucesso!");
+                        row.remove();  // Remove a linha da tabela após a deleção bem-sucedida
+                    } else {
+                        alert("Erro ao deletar registro!");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao tentar deletar registro:", error);
+                    alert("Ocorreu um erro ao tentar deletar o registro.");
+                });
+        }
     }
 });
 

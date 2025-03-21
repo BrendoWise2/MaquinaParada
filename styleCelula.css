@@ -205,12 +205,15 @@ td:last-child button:hover {
 }
 
 .linha {
-    display: none;
-    transition: all 0.3s ease;
+    display: table-row;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
 .linha.active {
-    display: table-row;
+    max-height: 1000px;
+    /* Ou algum valor suficientemente grande para acomodar o conteúdo */
 }
 
 .extra-info {

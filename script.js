@@ -10,6 +10,7 @@ btnSalvar.addEventListener('click', function () {
 
     operatorName = document.getElementById('operator').value.trim();
     celulaSelecionada = document.getElementById('celulas').value.trim();
+    complementoEquipamento = document.getElementById('complemento-equipamento').value.trim();
     startHour = document.getElementById('startHour').value.trim();
     endHour = document.getElementById('endHour').value.trim();
     startDate = document.getElementById('startDate').value.trim();
@@ -17,6 +18,10 @@ btnSalvar.addEventListener('click', function () {
     totalTime = document.getElementById('totalTime').value.trim();
     obs = document.getElementById('obs').value.trim();
 
+
+    if (complementoEquipamento == "Especificacoes") {
+        complementoEquipamento = "";
+    }
 
     // Agora sim: valida
     if (!operatorName || !celulaSelecionada || !startHour || !endHour || !startDate || !endDate || !totalTime) {
@@ -50,7 +55,7 @@ function salvarEquipamento() {
         body: JSON.stringify({
             operatorName: operatorName,
             celulaSelecionada: celulaSelecionada,
-            complementoEquipamento: "",
+            complementoEquipamento: complementoEquipamento,
             startHour: startHour,
             endHour: endHour,
             totalTime: totalTime,

@@ -213,7 +213,7 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
-const headerTime = document.getElementById('header-time'); // Supondo que seja o cabeçalho da coluna de tempo
+const headerTime = document.getElementById('products-header__cell'); // Supondo que seja o cabeçalho da coluna de tempo
 let ascendingOrder = true; // Variável para alternar a ordenação
 
 headerTime.addEventListener('click', () => {

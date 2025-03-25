@@ -104,6 +104,35 @@ function calcularTempoParada() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const tabela = document.querySelector("#tabela-celulas");
+    const cabecalhoParada = document.querySelector(".products-header__cell:nth-child(3)");
+
+    cabecalhoParada.addEventListener("click", function () {
+        let linhas = Array.from(tabela.querySelectorAll("tr.products-table__row"));
+
+        linhas.sort((a, b) => {
+            let tempoA = a.cells[2].innerText.trim();
+            let tempoB = b.cells[2].innerText.trim();
+
+            let segundosA = converterTempoParaSegundos(tempoA);
+            let segundosB = converterTempoParaSegundos(tempoB);
+
+            return segundosB - segundosA; // Ordenação decrescente (maior tempo primeiro)
+        });
+
+        linhas.forEach(linha => tabela.appendChild(linha)); // Reanexa as linhas na ordem correta
+    });
+
+    function converterTempoParaSegundos(tempo) {
+        let partes = tempo.split(":");
+        if (partes.length !== 3) return 0; // Caso algum dado esteja incompleto, retorna 0
+        let [horas, minutos, segundos] = partes.map(Number);
+        return horas * 3600 + minutos * 60 + segundos;
+    }
+});
+
+
 document.getElementById('startHour').addEventListener('input', calcularTempoParada);
 document.getElementById('endHour').addEventListener('input', calcularTempoParada);
 document.getElementById('startDate').addEventListener('input', calcularTempoParada);

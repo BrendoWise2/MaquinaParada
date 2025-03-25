@@ -62,11 +62,7 @@ function salvarEquipamento() {
             startDate: startDate,
             endDate: endDate,
             obs: obs
-
         })
-
-
-
     })
         .then(response => response.json())
         .then(data => {
@@ -75,7 +71,6 @@ function salvarEquipamento() {
         .catch(error => {
             console.error("Erro ao enviar os dados:", error);
         });
-
 }
 
 function calcularTempoParada() {

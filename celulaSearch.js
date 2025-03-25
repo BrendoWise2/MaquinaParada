@@ -213,36 +213,6 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
-const headerTime = document.getElementById('products-header__cell'); // Supondo que seja o cabeçalho da coluna de tempo
-let ascendingOrder = true; // Variável para alternar a ordenação
-
-headerTime.addEventListener('click', () => {
-    const tbody = document.querySelector('.products__table tbody');
-    const rows = Array.from(tbody.querySelectorAll('.products-table__row'));
-
-    // Criar um array de pares [linha principal, linha extra]
-    const rowPairs = rows.map(row => [row, row.nextElementSibling]);
-
-    rowPairs.sort((a, b) => {
-        const timeA = totalEmSegundos(a[0].querySelector('.products-header__cell:nth-child(3)').textContent);
-        const timeB = totalEmSegundos(b[0].querySelector('.products-header__cell:nth-child(3)').textContent);
-
-        return ascendingOrder ? timeA - timeB : timeB - timeA;
-    });
-
-    ascendingOrder = !ascendingOrder; // Alterna a ordem para o próximo clique
-
-    tbody.innerHTML = ""; // Limpa a tabela
-    rowPairs.forEach(([row, extraRow]) => {
-        tbody.appendChild(row); // Reanexa a linha principal
-        if (extraRow && extraRow.classList.contains("linha")) {
-            tbody.appendChild(extraRow); // Reanexa a linha extra, se existir
-        }
-    });
-});
-
-
-
 setInterval(() => {
     location.reload();
 }, 300000);

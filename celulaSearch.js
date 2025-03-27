@@ -213,6 +213,9 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
+bntDelete.disabled = true;
+bntDelete.style.cursor = "not-allowed";
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const headers = document.querySelectorAll(".products-header__cell");

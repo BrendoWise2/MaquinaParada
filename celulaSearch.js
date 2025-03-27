@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         header.style.cursor = "pointer";
         header.addEventListener("click", () => {
             // Reseta a cor de todos os cabeçalhos
-            headers.forEach(h => h.style.backgroundColor = "#1a4dd1"); // Cor padrão
+            headers.forEach(h => h.style.backgroundColor = "#2263f4"); // Cor padrão
 
             // Define o fundo laranja apenas no cabeçalho clicado
             header.style.backgroundColor = "#FFA500";

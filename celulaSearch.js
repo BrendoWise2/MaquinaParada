@@ -213,6 +213,53 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const headers = document.querySelectorAll(".products-header__cell");
+    const tableBody = document.getElementById("tabela-celulas");
+
+    headers.forEach((header, index) => {
+        if (index === 0 || index === 4) return; // Ignora as colunas "Imagem" e "Expandir/Deletar"
+
+        header.style.cursor = "pointer";
+        header.addEventListener("click", () => sortTable(index));
+    });
+
+    function sortTable(columnIndex) {
+        let rows = Array.from(tableBody.querySelectorAll("tr.products-table__row"));
+        let isAscending = headers[columnIndex].dataset.order === "asc";
+        headers[columnIndex].dataset.order = isAscending ? "desc" : "asc";
+
+        rows.sort((rowA, rowB) => {
+            let cellA = rowA.cells[columnIndex].textContent.trim();
+            let cellB = rowB.cells[columnIndex].textContent.trim();
+
+            if (columnIndex === 2) {
+                return compareTimes(cellA, cellB, isAscending);
+            } else if (columnIndex === 3) {
+                return compareDates(cellA, cellB, isAscending);
+            } else {
+                return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            }
+        });
+
+        tableBody.innerHTML = "";
+        rows.forEach(row => tableBody.appendChild(row));
+    }
+
+    function compareTimes(timeA, timeB, isAscending) {
+        let secondsA = totalEmSegundos(timeA);
+        let secondsB = totalEmSegundos(timeB);
+        return isAscending ? secondsA - secondsB : secondsB - secondsA;
+    }
+
+    function compareDates(dateA, dateB, isAscending) {
+        let formattedA = new Date(dateA.split("/").reverse().join("-"));
+        let formattedB = new Date(dateB.split("/").reverse().join("-"));
+        return isAscending ? formattedA - formattedB : formattedB - formattedA;
+    }
+});
+
+
 setInterval(() => {
     location.reload();
 }, 300000);

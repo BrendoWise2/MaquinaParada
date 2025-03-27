@@ -213,6 +213,7 @@ bntDelete.addEventListener('click', () => {
     }
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const headers = document.querySelectorAll(".products-header__cell");
     const tableBody = document.getElementById("tabela-celulas");
@@ -221,7 +222,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index === 0 || index === 4) return; // Ignora as colunas "Imagem" e "Expandir/Deletar"
 
         header.style.cursor = "pointer";
-        header.addEventListener("click", () => sortTable(index));
+        header.addEventListener("click", () => {
+            // Reseta a cor de todos os cabeçalhos
+            headers.forEach(h => h.style.backgroundColor = "#f1f1f1"); // Cor padrão
+
+            // Define o fundo laranja apenas no cabeçalho clicado
+            header.style.backgroundColor = "#FFA500";
+
+            // Chama a função de ordenação
+            sortTable(index);
+        });
     });
 
     function sortTable(columnIndex) {

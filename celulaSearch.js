@@ -115,6 +115,10 @@ search.addEventListener('keyup', () => {
         }
     }
 
+    document.querySelectorAll('.linha').forEach(linha => {
+        linha.style.display = '';
+    });
+
     // Atualiza o total de tempo após a pesquisa
     totalTimeCell.textContent = segundosParaTempo(totalSegundos);
 });

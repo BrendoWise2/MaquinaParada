@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         </td>
                     `;
 
-                    tbody.append(row);
-                    tbody.append(extraRow);
+                    tbody.prepend(extraRow);
+                    tbody.prepend(row);
 
 
                 });

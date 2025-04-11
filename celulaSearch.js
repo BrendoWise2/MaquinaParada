@@ -242,13 +242,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function sortTable(columnIndex) {
-        let rows = Array.from(tableBody.querySelectorAll("tr.products-table__row"));
+        let rows = Array.from(tableBody.querySelectorAll("tr.products-table__row")).map(row => {
+            const extra = row.nextElementSibling;
+            return { row, extra };
+        });
+
         let isAscending = headers[columnIndex].dataset.order === "asc";
         headers[columnIndex].dataset.order = isAscending ? "desc" : "asc";
 
-        rows.sort((rowA, rowB) => {
-            let cellA = rowA.cells[columnIndex].textContent.trim();
-            let cellB = rowB.cells[columnIndex].textContent.trim();
+        rows.sort((a, b) => {
+            let cellA = a.row.cells[columnIndex].textContent.trim();
+            let cellB = b.row.cells[columnIndex].textContent.trim();
 
             if (columnIndex === 2) {
                 return compareTimes(cellA, cellB, isAscending);
@@ -259,8 +263,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+
         tableBody.innerHTML = "";
-        rows.forEach(row => tableBody.appendChild(row));
+        rows.forEach(({ row, extra }) => {
+            tableBody.appendChild(row);
+            if (extra && extra.classList.contains("linha")) {
+                tableBody.appendChild(extra);
+            }
+        });
+
     }
 
     function compareTimes(timeA, timeB, isAscending) {

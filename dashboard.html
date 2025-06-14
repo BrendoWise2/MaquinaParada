@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styleAdm.css">
+    <title>Celula</title>
+    <link rel="stylesheet" href="styleCelula.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Satisfy&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -25,10 +28,11 @@
                         <th class="products-header__cell">Equipamento</th>
                         <th class="products-header__cell">Parada Total</th>
                         <th class="products-header__cell">Data</th>
-                        <th class="products-header__cell">Expandir</th>
+                        <th class="products-header__cell">Expandir/Deletar</th>
+                        <div class="search"><label>Procurar: </label><input id="search-celula" type="text"></div>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabela-celulas">
                     <tr class="products-table__row">
                         <td class="products-table__cell">
                             <figure class="products-table__figure center">
@@ -37,14 +41,42 @@
                                     alt="Celula">
                             </figure>
                         </td>
-                        <td class="products-header__cell">Celula 13</td>
-                        <td class="products-header__cell">20:35:10</td>
-                        <td class="products-header__cell">01/03/2025</td>
-                        <td class="products-header__cell"><button><i class="fa-solid fa-circle-plus"></i></button></td>
+                        <td class="products-header__cell"> - </td>
+                        <td class="products-header__cell">--:--:--</td>
+                        <td class="products-header__cell">__/__/__</td>
+                        <td class="products-header__cell"><button class="expand-btn"><i
+                                    class="fa-solid fa-circle-plus"></i></button>
+                            <button class="delete-btn"><i class="fa-regular fa-trash-can"
+                                    style="color: #ff0000;"></i></button>
+                        </td>
+
+
+                    </tr>
+                    <tr class="linha hidden">
+                        <td colspan="5" class="extra-info">
+                            <p><strong>Nome:</strong> Nome do Operador</p>
+                            <p><strong>Início:</strong> --:--</p>
+                            <p><strong>Fim:</strong> --:--</p>
+                            <p><strong>Data Fim:</strong> __/__/__</p>
+                            <div class="obs-text">
+                                <pre class="observacao"><strong>Obs:</strong>Sem dados</pre>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </section>
+        <div class="times">
+            <p class="developer">BrendoWise</p>
+            <div class="time-div">
+                <p>Tempo Total de Parada: </p>
+                <p id="total-time">02:00:00</p>
+            </div>
+
+            <div class="deletar-registros">
+                <button id="bnt-delete">Deletar Registros</button>
+            </div>
+        </div>
     </main>
     <script src="admin.js"></script>
 </body>
